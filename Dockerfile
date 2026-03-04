@@ -12,7 +12,7 @@ RUN go mod tidy
 RUN go install github.com/swaggo/swag/cmd/swag@latest
 RUN swag init -g ./cmd/server/main.go
 RUN mkdir -p ./bin
-RUN go build -ldflags="-s -w" -o ./bin ${APP_RELATIVE_PATH}
+RUN go build -ldflags="-s -w" -o ./bin ./cmd/server/...
 RUN mv config /data/app/bin/
 
 FROM docker.io/chromedp/headless-shell:latest
@@ -32,7 +32,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 ARG APP_CONF
-ENV APP_CONF=${APP_CONF}
+ENV APP_CONF=config/prod.yml
 
 WORKDIR /data/app
 COPY --from=builder /data/app/bin /data/app
