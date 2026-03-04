@@ -1,0 +1,45 @@
+env: prod
+http:
+  host: 0.0.0.0
+  #  host: 127.0.0.1
+  port: 80
+security:
+  api_sign:
+    app_key: 123456
+    app_security: 123456
+  jwt:
+    key: QQYnRFerJTSEcrfB89fw8prOaObmrch8
+data:
+  db:
+    user:
+      driver: mysql
+      dsn: root:Fqx_998875@tcp(47.76.150.244:3306)/auto_go_db?charset=utf8mb4&parseTime=True&loc=Local
+  #    user:
+  #      driver: mysql
+  #      dsn: root:123456@tcp(127.0.0.1:3380)/user?charset=utf8mb4&parseTime=True&loc=Local
+  #    user:
+  #      driver: postgres
+  #      dsn: host=localhost user=gorm password=gorm dbname=gorm port=9920 sslmode=disable TimeZone=Asia/Shanghai
+  redis:
+    addr: 127.0.0.1:6350
+    password: ""
+    db: 0
+    read_timeout: 0.2s
+    write_timeout: 0.2s
+  mongo:
+    uri: mongodb://root:123456@localhost:27017
+log:
+  log_level: info
+  mode: file               #  file or console or both
+  encoding: json           # json or console
+  log_file_name: "./storage/logs/server.log"
+  max_backups: 30
+  max_age: 7
+  max_size: 1024
+  compress: true
+
+wechat:
+  app_id: wx60a31372d02befdc
+  app_secret: 4000b01ac24c3f953a976c3e8f9a3d7d
+  token: QQYnRFerJTSEcrfB89fw8prOaObmrch8
+  encoding_aes_key: mYd6u3yWbkZVFGp63zInRpoU4MLQ8oLPOhsBm6lsH4f

@@ -1,0 +1,10 @@
+storage/logs
+.idea
+*.log
+deploy/docker-compose/conf
+deploy/docker-compose/data
+cmd/ws-client/chrome/
+/cmd/ws-client/chrome/
+/cmd/ws-client/*.exe
+/cmd/ws-client/cookie.txt
+/cmd/ws-client/download/
