@@ -37,7 +37,7 @@ ENV APP_CONF=${APP_CONF}
 WORKDIR /data/app
 COPY --from=builder /data/app/bin /data/app
 RUN ls -l
-EXPOSE 8000
+EXPOSE 80
 ENTRYPOINT [ "./server" ]
 
 #docker build -t  1.1.1.1:5000/demo-echoes-api:v1 --build-arg APP_CONF=config/prod.yml --build-arg  APP_RELATIVE_PATH=./cmd/server/...  .
