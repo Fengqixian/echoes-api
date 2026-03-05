@@ -29,9 +29,9 @@ data:
   mongo:
     uri: mongodb://root:123456@localhost:27017
 log:
-  log_level: info
-  mode: file               #  file or console or both
-  encoding: json           # json or console
+  log_level: debug
+  mode: both               #  file or console or both
+  encoding: console           # json or console
   log_file_name: "./storage/logs/server.log"
   max_backups: 30
   max_age: 7
